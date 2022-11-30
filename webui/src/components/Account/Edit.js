@@ -88,10 +88,10 @@ class Edit extends Component {
       formData,
     };
 
-    if (action === 'update' && (roles.indexOf('admin') === -1 || formData.username === username)) {
+    if (action === 'update' && (roles.indexOf('admin') === -1 || formData.username !== username)) {
       state.uiSchema = Object.assign(state.uiSchema, {
         "roles": {
-          "ui:disabled": true,
+          "ui:disabled": false,
           "ui:options": {
             "addable": false,
             "orderable": false,

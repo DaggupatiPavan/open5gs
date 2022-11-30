@@ -2,6 +2,8 @@ FROM node:19
 
 MAINTAINER Sukchan Lee <acetcom@gmail.com>
 
+CMD mkdir -p /usr/src/open5gs/webui
+
 COPY webui /usr/src/open5gs/webui
 
 WORKDIR /usr/src/open5gs/webui
