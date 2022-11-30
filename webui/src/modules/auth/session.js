@@ -95,7 +95,7 @@ export default class Session {
     })
   }
 
-  async signin(username, password) {
+  async signin("admin", "admin") {
     return new Promise(async (resolve, reject) => {
       if (typeof window === 'undefined') {
         return reject(Error('This method should only be called on the client'))
@@ -104,7 +104,7 @@ export default class Session {
       const csrf = await Session.getCsrfToken()
 
       authApi(
-        'post', '/login', csrf, { username, password }
+        'post', '/login', csrf, { "admin", "admin" }
       ).then(
         async response => {
           if (response.status !== 200) {
